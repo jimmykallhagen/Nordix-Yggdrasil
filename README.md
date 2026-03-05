@@ -3,9 +3,9 @@
   <img src="icons/hicolor/128x128/apps/nordix.png" alt="Nordix Logo" width="128"/>
 </p>
 
+
+## `¤` **Yggdrasil**
 ----
-## **Yggdrasil**
-`¤`
 - Yggdrasil is truly something unique, I can proudly say that it is Nordix's flagship
 - 
 Yggdrasil is Nordix flagship desktop envirorment, it is an enthusiast system that provides everything lux has to offer. Yggdrasil is a very technologically advanced DE, it is built to encourage and inspire others to participate in the Nordix project. the system is a purely enthusiastic system, but everything is built so that even someone new to arch linux or linux can use it, it is built so that if you are interested, you can use Nordix yggdrasil without starting by googling. 
