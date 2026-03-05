@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="../icons/hicolor/128x128/apps/nordix.png" width="128">
-</p>>
+</p>
 
 
 # ❄️ Nordix System Settings
