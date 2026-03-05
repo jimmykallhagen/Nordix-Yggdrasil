@@ -31,6 +31,8 @@ You adjust everything from the Nordix System settings GUI
 - Firfox
 - Terminal
 
+[More info on Nordix theme for Yggdrasil](/nordix-theme/nordix-dynamic-theme/README.md)
+
 ---
 
 ## Yggdrasil's Keybinds
