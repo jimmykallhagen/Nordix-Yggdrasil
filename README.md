@@ -43,7 +43,7 @@ or move your left hand
 
 ---
 
-## **Nordix Yggdrasil - The Final Desktop Envirorment** 
+## **Yggdrasil** *-* The Final Desktop Envirorment
 
 #### **Never again a dotfile**
 
