@@ -7,7 +7,7 @@
 
 # ❄️ **Yggdrasil**
 
-## **Yggdrasil is truly something unique, I can proudly say that it is Nordix's flagship**
+## **Yggdrasil is truly a uniqe desktop enviroent, and can proudly say that it Nordix's flagship**
 
 **Based on the Wayland compositor Hyprland**
 
