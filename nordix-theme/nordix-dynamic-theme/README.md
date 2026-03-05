@@ -135,9 +135,9 @@ sudo chmod +x /usr/bin/nordix-wallpaper-loop.sh
 
 You can still run nordix-dynamic-theme.py
 manually from your terminal, it will then take a color sample <br>
-of your current wallpaper and apply it as a theme for your desktop.
-If you want your desktop to automatically change theme when you change<br>
-the background, you need to add this as you see below to ~/.config/waypaper/config.ini
+of your current wallpaper and apply it as a theme for your desktop.<br>
+If you want your desktop to automatically change theme when you change the background,<br>
+you need to add this as you see below to ~/.config/waypaper/config.ini
 ```
 post_command = /path/to/nordix-dynamic-theme.py
 ```
