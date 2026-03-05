@@ -26,6 +26,13 @@
 
 ---
 
+## ScreenShot
+<p align="center">
+  <img src="../..//screenshot-bar1.png" alt="Nordix Logo" width="128"/>
+</p
+<p align="center">
+  <img src="../..//screenshot-bar2.png" alt="Nordix Logo" width="128"/>
+</p
 ## Licens
 
 
