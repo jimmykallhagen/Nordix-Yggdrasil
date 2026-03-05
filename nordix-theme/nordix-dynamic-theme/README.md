@@ -13,6 +13,7 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 - Nordix desktop environment Yggdrasil is built upon the hard work of several outstanding open-source projects.
 - All credit for the foundational work belongs to the original developers. Here are the projects that make this possible:
 
+### The projects that make this possible:
 
 - **[pywal](https://github.com/dylanaraps/pywal)** – The original pywal project, run by Dylan "dylanaraps" and contributors.
 - **[pywal16](https://github.com/eylles/pywal16)** – 16-bit color fork of pywal, by Eylles and contributors.
