@@ -19,6 +19,8 @@ You adjust everything from the Nordix System settings GUI
 - Dwindle Layout for tilling windows
 - Scrolling Layout for tilling windows
 - Monocle Layout for tilling windows
+
+---
   
 ## Nordix Dynamic Theme for Yggdrasil
 **Dynamically adjusts your desktop theme by taking the colors from your wallpaper**
@@ -37,10 +39,11 @@ You adjust everything from the Nordix System settings GUI
 or move your left hand
 - however, there are some exceptions
 
+---
 
-### **Nordix Yggdrasil - The Final Desktop Envirorment** 
+## **Nordix Yggdrasil - The Final Desktop Envirorment** 
 
-##### **Never again a dotfile**
+#### **Never again a dotfile**
 
 The entire Hyprland wiki is built into Yggdrasil's system settings, with a few exceptions.
 Yggdrasil is not Hyprland, but a desktop environment I built myself based on Hyprland's compositor.
@@ -49,7 +52,7 @@ If you are one of those who think you need to change this, then you don't need a
 
 ---
 
-#### **GUI - For All System Settings**
+## **GUI - For All System Settings**
 - Nordix System-settings
 - Nordix Default-apps
 - Nordix Settings-advanced
