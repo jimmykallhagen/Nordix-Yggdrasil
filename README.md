@@ -65,7 +65,7 @@ If you are one of those who think you need to change this, then you don't need a
 - Nordix Settings-layout
 - Nordix Settings-monitors
 
-[More Info on Nordix GUI]:(https://github.com/jimmykallhagen/Nordix-Yggdrasil/blob/master/nordix-system-settings-gui/README.md)
+[More Info on Nordix GUI]: (https://github.com/jimmykallhagen/Nordix-Yggdrasil/blob/master/nordix-system-settings-gui/README.md)
 
 ---
 
