@@ -42,10 +42,10 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 - **GTK-4** — custom `libadwaita-tweaks.css` for native libadwaita apps
 - **Qt** — KDE color scheme generated from pywal, loaded via hyprqt6engine
 - **Firefox** — themed via python-pywalfox (requires the Pywalfox extension in Firefox)              
-│ 
-│                 
-│ 
-└──────
+
+
+ 
+─────────────────────────────────
 
 nordix-dynamic-theme.py runs: `gsettings set org.gnome.desktop.interface gtk-theme nordix-dynamic-theme` to set the GTK theme. It runs `hyprctl reload` to reload the Qt theme (Hyprland uses hyprqt6engine). Your hyprqt6engine.conf needs to point the color scheme to `~/.cache/wal/nordix-dynamic.colors` for the Qt theme to work.
 
