@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Nordix Shader Manager
+Comment=Manage and Configure Nordix Shaders System 
+Exec=/usr/bin/nordix-shader.manager.py
+Icon=nordix
+Terminal=false
+Type=Application
+Categories=Settings;System;
+Keywords=settings;preferences;configuration;nordix;hyprland;
+StartupNotify=true
+StartupWMClass=com.Nordix.Shader.Manager

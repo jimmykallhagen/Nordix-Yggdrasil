@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2025 Nordix
+
+set -euo pipefail
+
+have() { command -v "$1" >/dev/null 2>&1; }
+
+ensure_zenity() {
+  if ! have zenity; then
+    if have pkexec; then
+      pkexec /bin/bash -c 'pacman -Sy --noconfirm zenity'
+    else
+      echo "Zenity is missing. Install it with: sudo pacman -S zenity" >&2
+      exit 1
+    fi
+  fi
+}
+
+get_ips() {
+  # take IPv4 on all active interface (exclude loopback)
+  ip -4 -o addr show up 2>/dev/null \
+    | awk '!/ lo / {print $4}' \
+    | cut -d/ -f1
+}
+
+get_route_ip() {
+  # Fallback: IP routing
+  ip route get 1.1.1.1 2>/dev/null \
+    | awk '/src/ {for(i=1;i<=NF;i++) if ($i=="src") {print $(i+1); exit}}'
+}
+
+main() {
+  ensure_zenity
+
+  ips="$(get_ips || true)"
+  if [[ -z "${ips// /}" ]]; then
+    ips="$(get_route_ip || true)"
+  fi
+  [[ -z "${ips// /}" ]] && ips="No IPv4 was found."
+
+  zenity --info --title="Your IP-adress" --text="IP-adress for SSH:\n\n${ips}"
+}
+
+main "$@"

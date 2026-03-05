@@ -1,0 +1,179 @@
+#!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2025 Nordix
+
+# ============================================
+# Nordix Auto Snapshot
+# Automatic ZFS snapshot service for Nordix
+# Run by systemd timer daily
+# ============================================
+
+# Configuration
+CONFIG_FILE="/etc/nordix/zfs/auto-snapshot.conf"
+LOG_FILE="/var/log/nordix-auto-snapshot.log"
+SNAPSHOT_PREFIX="auto-snapshot"
+
+# Default settings (overridden by config file)
+RETENTION_DAYS=14
+DATASETS=""  # Empty = all datasets
+
+# ============================================
+# FUNCTIONS
+# ============================================
+
+log() {
+    local timestamp=$(date "+%Y-%m-%d %H:%M:%S")
+    echo "[$timestamp] $1" >> "$LOG_FILE"
+    echo "[$timestamp] $1"
+}
+
+load_config() {
+    if [ -f "$CONFIG_FILE" ]; then
+        source "$CONFIG_FILE"
+        log "Loaded config from $CONFIG_FILE"
+    else
+        log "No config file found, using defaults"
+    fi
+}
+
+get_datasets() {
+    if [ -n "$DATASETS" ]; then
+        echo "$DATASETS"
+    else
+        # Get all datasets (excluding snapshots)
+        zfs list -H -o name 2>/dev/null
+    fi
+}
+
+create_snapshots() {
+    local timestamp=$(date +%Y-%m-%d_%H-%M-%S)
+    local snapshot_name="${SNAPSHOT_PREFIX}_${timestamp}"
+    local success=0
+    local failed=0
+    
+    log "Starting auto-snapshot: $snapshot_name"
+    
+    while IFS= read -r dataset; do
+        if [ -n "$dataset" ]; then
+            local full_name="${dataset}@${snapshot_name}"
+            
+            if zfs snapshot "$full_name" 2>/dev/null; then
+                log "  [OK] Created: $full_name"
+                ((success++))
+            else
+                log "  [FAIL] Failed: $full_name"
+                ((failed++))
+            fi
+        fi
+    done < <(get_datasets)
+    
+    log "Snapshot complete: $success successful, $failed failed"
+}
+
+cleanup_old_snapshots() {
+    local cutoff_date=$(date -d "$RETENTION_DAYS days ago" +%Y-%m-%d 2>/dev/null || date -v-${RETENTION_DAYS}d +%Y-%m-%d 2>/dev/null)
+    local deleted=0
+    local kept=0
+    
+    log "Cleaning up auto-snapshots older than $RETENTION_DAYS days (before $cutoff_date)"
+    
+    # Get all auto-snapshots
+    zfs list -H -t snapshot -o name 2>/dev/null | grep "@${SNAPSHOT_PREFIX}_" | while read -r snapshot; do
+        # Extract date from snapshot name
+        # Format: dataset@auto-snapshot_YYYY-MM-DD_HH-MM-SS
+        local snap_date=$(echo "$snapshot" | grep -oP "${SNAPSHOT_PREFIX}_\K[0-9]{4}-[0-9]{2}-[0-9]{2}" | head -1)
+        
+        if [ -n "$snap_date" ]; then
+            # Compare dates
+            if [[ "$snap_date" < "$cutoff_date" ]]; then
+                if zfs destroy "$snapshot" 2>/dev/null; then
+                    log "  [DELETED] $snapshot"
+                    ((deleted++))
+                else
+                    log "  [FAIL] Could not delete: $snapshot"
+                fi
+            else
+                ((kept++))
+            fi
+        fi
+    done
+    
+    log "Cleanup complete: deleted old snapshots, kept recent ones"
+}
+
+show_status() {
+    echo "Nordix Auto-Snapshot Status"
+    echo "============================"
+    echo ""
+    echo "Configuration:"
+    echo "  Retention: $RETENTION_DAYS days"
+    echo "  Datasets: ${DATASETS:-all}"
+    echo ""
+    echo "Auto-snapshots:"
+    zfs list -H -t snapshot -o name,used,creation 2>/dev/null | grep "@${SNAPSHOT_PREFIX}_" | tail -20
+    echo ""
+    echo "Total auto-snapshots: $(zfs list -H -t snapshot -o name 2>/dev/null | grep -c "@${SNAPSHOT_PREFIX}_")"
+}
+
+# ============================================
+# MAIN
+# ============================================
+
+# Check if running as root
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run as root"
+    exit 1
+fi
+
+# Check if ZFS is available
+if ! command -v zfs &>/dev/null; then
+    echo "ZFS is not installed"
+    exit 1
+fi
+
+# Create log directory if needed
+mkdir -p "$(dirname "$LOG_FILE")"
+mkdir -p "$(dirname "$CONFIG_FILE")"
+
+# Load configuration
+load_config
+
+# Parse arguments
+case "$1" in
+    --create|-c)
+        create_snapshots
+        ;;
+    --cleanup|-C)
+        cleanup_old_snapshots
+        ;;
+    --run|-r)
+        # Normal run: create new, then cleanup old
+        create_snapshots
+        cleanup_old_snapshots
+        ;;
+    --status|-s)
+        show_status
+        ;;
+    --help|-h)
+        echo "Nordix Auto-Snapshot"
+        echo ""
+        echo "Usage: $0 [option]"
+        echo ""
+        echo "Options:"
+        echo "  --create, -c    Create snapshots only"
+        echo "  --cleanup, -C   Cleanup old snapshots only"
+        echo "  --run, -r       Create and cleanup (default for timer)"
+        echo "  --status, -s    Show status"
+        echo "  --help, -h      Show this help"
+        echo ""
+        echo "Config file: $CONFIG_FILE"
+        echo "Log file: $LOG_FILE"
+        ;;
+    *)
+        # Default: run both create and cleanup
+        create_snapshots
+        cleanup_old_snapshots
+        ;;
+esac
+
+exit 0

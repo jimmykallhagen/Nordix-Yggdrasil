@@ -1,0 +1,5 @@
+#!/bin/bash
+cores=$(($(nproc) / 2))
+for ((i=0; i<cores; i++)); do
+    printf "Core %2d:  %2d - %2d\n" "$i" "$i" "$((i + cores))"
+done

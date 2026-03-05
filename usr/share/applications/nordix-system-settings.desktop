@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Nordix System Settings
+Comment=Configure your Nordix Desktop
+Exec=/usr/bin/nordix-system-settings.py
+Icon=nordix
+Terminal=false
+Type=Application
+Categories=Settings;System;
+Keywords=settings;preferences;configuration;nordix;hyprland;
+StartupNotify=true
+StartupWMClass=cam.Nordix.System.Settings

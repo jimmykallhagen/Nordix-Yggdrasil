@@ -1,0 +1,226 @@
+#!/bin/bash
+##===================================================================##
+ # SPDX-License-Identifier: GPL-3.0-or-later                         #
+ # Copyright (c) 2025 Jimmy Källhagen                                #
+ # Part of Yggdrasil - Nordix desktop environment                    #
+ # Nordix and Yggdrasil are registered trademarks of Jimmy Källhagen # 
+##===================================================================##
+
+# ================================================
+# nordix-filestat — File size analysis tool
+# Developed to be able to set correct choices for
+# ZFS compression and recordsize options
+
+# ================================================
+#
+# Analyzes file sizes in a directory.
+# Useful for determining storage characteristics
+# and dataset configuration.
+#
+# Usage:
+#   nx-filestat /path/to/directory          Filtered (excludes irrelevant files)
+#   nx-filestat -a /path/to/directory       All files (no filtering)
+#   nx-filestat -q /path/to/directory       Compact output (no distribution)
+#   nx-filestat -aq /path/to/directory      All files + compact
+#
+
+set -euo pipefail
+
+# =============================================
+# DEFAULTS
+# =============================================
+FILTER=true
+VERBOSE=true
+TARGET=""
+
+# =============================================
+# EXCLUDED FILE TYPES
+# =============================================
+# These are typically irrelevant for measuring actual data files:
+#   - Text/config files (tiny, skew average down)
+#   - Scripts and source code
+#   - Images and icons
+#   - Desktop entries and metadata
+#   - Documentation
+
+EXCLUDE_EXTENSIONS=(
+    # Text / documentation
+    txt md rst html css js json xml yaml yml toml csv log
+    # Scripts / source
+    sh bash zsh fish py pl rb lua go rs php c h cpp hpp java
+    # Config / metadata
+    conf cfg ini desktop service timer socket mount path
+    rules policy pc cmake mk meson gir typelib
+    # Images / icons
+    png jpg jpeg gif svg ico bmp webp xpm xbm tiff cur ani
+    # Fonts (usually measured separately)
+    ttf otf woff woff2
+)
+
+# =============================================
+# PARSE ARGUMENTS
+# =============================================
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -a|--all)
+            FILTER=false
+            shift
+            ;;
+        -q|--quiet)
+            VERBOSE=false
+            shift
+            ;;
+        -aq|-qa)
+            FILTER=false
+            VERBOSE=false
+            shift
+            ;;
+        -h|--help)
+            echo "Usage: $(basename "$0") [OPTIONS] /path/to/directory"
+            echo ""
+            echo "Analyze file sizes in a directory."
+            echo ""
+            echo "Options:"
+            echo "  -a, --all       Include all files (no filtering)"
+            echo "  -q, --quiet     Compact output (no size distribution)"
+            echo "  -h, --help      Show this help"
+            echo ""
+            echo "Default: excludes scripts, configs, images, icons,"
+            echo "         desktop entries, symlinks and empty files."
+            exit 0
+            ;;
+        -*)
+            echo "Unknown option: $1"
+            echo "Try: $(basename "$0") --help"
+            exit 1
+            ;;
+        *)
+            TARGET="$1"
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$TARGET" ]]; then
+    echo "Usage: $(basename "$0") [OPTIONS] /path/to/directory"
+    echo "Try: $(basename "$0") --help"
+    exit 1
+fi
+
+if [[ ! -d "$TARGET" ]]; then
+    echo "Error: '$TARGET' is not a directory"
+    exit 1
+fi
+
+# =============================================
+# BUILD FIND COMMAND
+# =============================================
+FIND_ARGS=("$TARGET" -type f ! -empty)
+
+# Exclude symlink targets are already handled by -type f (not -type l)
+# Add extension filters
+if [[ "$FILTER" == true ]]; then
+    for ext in "${EXCLUDE_EXTENSIONS[@]}"; do
+        FIND_ARGS+=(! -iname "*.${ext}")
+    done
+    # Also exclude common non-data files by name
+    FIND_ARGS+=(
+        ! -name "README*"
+        ! -name "LICENSE*"
+        ! -name "COPYING*"
+        ! -name "CHANGELOG*"
+        ! -name "Makefile"
+        ! -name "CMakeLists.txt"
+        ! -name ".gitignore"
+        ! -name ".gitmodules"
+    )
+fi
+
+# =============================================
+# ANALYZE
+# =============================================
+MODE="Filtered"
+[[ "$FILTER" == false ]] && MODE="All files"
+
+find "${FIND_ARGS[@]}" -printf "%s\n" 2>/dev/null | sort -n | TARGET="$TARGET" awk -v mode="$MODE" -v verbose="$VERBOSE" '
+function human(bytes) {
+    if (bytes < 1024)
+        return sprintf("%.0f B", bytes)
+    else if (bytes < 1048576)
+        return sprintf("%.1f KB", bytes / 1024)
+    else if (bytes < 1073741824)
+        return sprintf("%.1f MB", bytes / 1048576)
+    else
+        return sprintf("%.2f GB", bytes / 1073741824)
+}
+BEGIN {
+    sum = 0
+    count = 0
+    b_4k = 0;   b_8k = 0;   b_16k = 0;  b_32k = 0
+    b_64k = 0;  b_128k = 0; b_256k = 0;  b_512k = 0
+    b_1m = 0;   b_over = 0
+}
+{
+    size = $1
+    sizes[count] = size
+    sum += size
+    count++
+
+    if      (size <=     4096) b_4k++
+    else if (size <=     8192) b_8k++
+    else if (size <=    16384) b_16k++
+    else if (size <=    32768) b_32k++
+    else if (size <=    65536) b_64k++
+    else if (size <=   131072) b_128k++
+    else if (size <=   262144) b_256k++
+    else if (size <=   524288) b_512k++
+    else if (size <=  1048576) b_1m++
+    else                       b_over++
+}
+END {
+    if (count == 0) {
+        print "No files found."
+        exit
+    }
+
+    avg = sum / count
+    min = sizes[0]
+    max = sizes[count - 1]
+
+    if (count % 2 == 1)
+        median = sizes[int(count / 2)]
+    else
+        median = (sizes[count/2 - 1] + sizes[count/2]) / 2
+
+    printf "═══════════════════════════════════════════\n"
+    printf "  Nordix-Filestat — %s\n", mode
+    printf "  %s\n", ENVIRON["TARGET"]
+    printf "═══════════════════════════════════════════\n"
+    printf "\n"
+    printf "  Files:      %d\n", count
+    printf "  Total:      %s\n", human(sum)
+    printf "\n"
+    printf "  Average:    %s\n", human(avg)
+    printf "  Median:     %s\n", human(median)
+    printf "  Min:        %s\n", human(min)
+    printf "  Max:        %s\n", human(max)
+    printf "\n"
+    printf "═══════════════════════════════════════════\n"
+
+    if (verbose == "true") {
+        printf "\n  Size distribution:\n"
+        printf "  ─────────────────────────────────────\n"
+        printf "  ≤  4 KB    %6d  (%5.1f%%)\n", b_4k,   (b_4k/count)*100
+        printf "  ≤  8 KB    %6d  (%5.1f%%)\n", b_8k,   (b_8k/count)*100
+        printf "  ≤ 16 KB    %6d  (%5.1f%%)\n", b_16k,  (b_16k/count)*100
+        printf "  ≤ 32 KB    %6d  (%5.1f%%)\n", b_32k,  (b_32k/count)*100
+        printf "  ≤ 64 KB    %6d  (%5.1f%%)\n", b_64k,  (b_64k/count)*100
+        printf "  ≤128 KB    %6d  (%5.1f%%)\n", b_128k, (b_128k/count)*100
+        printf "  ≤256 KB    %6d  (%5.1f%%)\n", b_256k, (b_256k/count)*100
+        printf "  ≤512 KB    %6d  (%5.1f%%)\n", b_512k, (b_512k/count)*100
+        printf "  ≤  1 MB    %6d  (%5.1f%%)\n", b_1m,   (b_1m/count)*100
+        printf "  >  1 MB    %6d  (%5.1f%%)\n", b_over, (b_over/count)*100
+        printf "  ─────────────────────────────────────\n"
+    }
+}
+'

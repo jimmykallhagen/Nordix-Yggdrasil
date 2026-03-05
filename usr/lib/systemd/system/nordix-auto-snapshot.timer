@@ -1,0 +1,14 @@
+[Unit]
+Description=Nordix ZFS Auto-Snapshot Timer
+Documentation=https://github.com/nordix
+
+[Timer]
+# Run daily at 03:00
+OnCalendar=*-*-* 03:00:00
+# Run on boot if missed
+Persistent=true
+# Randomize start time by up to 30 minutes to avoid disk I/O spikes
+RandomizedDelaySec=1800
+
+[Install]
+WantedBy=timers.target

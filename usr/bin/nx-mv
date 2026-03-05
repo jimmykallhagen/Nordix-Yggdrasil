@@ -1,0 +1,65 @@
+#!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2025 Nordix
+#
+# Wrapper for running commands on the last two physical CPU cores
+#
+# The mv command is a single core process,
+# but that then forces mv to use two physical cores
+# which can boost mv by allowing mv to switch cores
+# when one starts to get hot and then maintain a higher cpu boost.
+# using more cores than two does not seem to have a positive effect on performance
+#
+#  
+#  Install: sudo cp nx-mv /usr/local/bin
+#
+#  suggestions for configt.fish: alias mv='nx-mv'
+#
+#
+#
+GREEN='\033[38;2;0;255;0m'
+WHITE='\033[38;2;255;255;255m'
+NVBLUE='\033[38;2;175;251;253m'
+NARTIC='\033[38;2;156;230;255m'
+NHYPRBLUE='\033[38;2;0;210;255m'
+NC='\033[0m' 
+# Find total number of processors (threads)
+
+total_threads=$(nproc)
+
+# Calculate the number of physical cores (assuming 2 threads per core if hyperthreading is on)
+cores=$((total_threads / 2))
+
+# If odd number of threads or no hyperthreading, fallback to slightly different logic
+if [ $cores -eq 0 ]; then
+    cores=$total_threads
+fi
+
+# Last physical core = cores - 1 (zero-based)
+last_core=$((cores - 1))
+
+# The threads for the last core: (last_core * 2) and (last_core * 2 + 1)
+thread1=$((last_core * 2))
+thread2=$((last_core * 2 + 1))
+
+# But we want the last AND the second to last core (to have two to jump between)
+second_last_core=$((cores - 2))
+thread3=$((second_last_core * 2))
+thread4=$((second_last_core * 2 + 1))
+
+# Select two threads from different cores - take the first thread from the second to last core
+# and the first thread from the last core (to avoid siblings)
+if [ $cores -ge 2 ]; then
+    cpu_list="$thread3,$thread1"
+else
+# Fallback if only one core
+    cpu_list="0,1"
+fi
+
+# Show which CPUs we are using (for debugging)
+echo -e "${NARTIC}System has $total_threads threads and ${HYPRBLUE}$cores ${NAARTIC}physical core" >&2
+echo -e "${NARTIC}Enable process management on CPU${WHITE}:${HYPRBLUE} $cpu_list" >&2
+echo -e "${GREEN}Starting:${NARTIC} Nordix ${WHITE}-${NARTIC} Move" >&2
+
+# Run the command with the taskset
+exec taskset -c "$cpu_list" mv "$@"
