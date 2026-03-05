@@ -1,5 +1,9 @@
-![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo") <h1 align="center">Nordix Yggdrasil</h1>
----
+ <h1 align="center">Nordix Yggdrasil</h1>
+<p align="center">
+  <img src="icons/hicolor/128x128/apps/nordix.png" alt="Nordix Logo" width="128"/>
+</p>
+
+----
 ## **Yggdrasil**
 
 Yggdrasil is Nordix flagship desktop envirorment, it is an enthusiast system that provides everything lux has to offer. Yggdrasil is a very technologically advanced DE, it is built to encourage and inspire others to participate in the Nordix project. the system is a purely enthusiastic system, but everything is built so that even someone new to arch linux or linux can use it, it is built so that if you are interested, you can use Nordix yggdrasil without starting by googling. 
@@ -17,6 +21,5 @@ TheEnchantedPotao@proton.me
 ![Nordix Logo](icons/hicolor/128x128/apps/nordix.png) 
 TheEnchantedPotao@proton.me
 ![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo")
-<p align="center">
-  <img src="icons/hicolor/128x128/apps/nordix.png" alt="Nordix Logo" width="128"/>
-</p>
+
+![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo")
