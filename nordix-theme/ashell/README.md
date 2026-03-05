@@ -11,7 +11,6 @@
 ### The projects that make this possible:
 
 - **[Ashell](https://github.com/MalpenZibo/ashell)** - Wayland status bar for Hyprland and Niri, a project run by Simone Camito "MalpenZibo" and a number of Contributors
-- 
 
 ---
 
