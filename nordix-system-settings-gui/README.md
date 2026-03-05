@@ -1,4 +1,6 @@
-# Nordix System Settings
+
+
+#❄️ Nordix System Settings
 
 A graphical settings system for the Nordix Desktop Environment built on Hyprland. Provides a unified interface to configure the desktop without editing config files manually.
 
