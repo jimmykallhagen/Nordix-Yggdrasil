@@ -7,7 +7,9 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 
 ---
 
+
 ## Nordix principles - Honor the developers
+
 ### Nordix desktop theme for Yggdrasil is built upon the hard work of several outstanding open-source projects.  
 ### All credit for the foundational work belongs to the original developers. Here are the projects that make this possible:
 
