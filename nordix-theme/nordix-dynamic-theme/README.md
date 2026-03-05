@@ -44,7 +44,6 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 - **Firefox** — themed via python-pywalfox (requires the Pywalfox extension in Firefox)
 <br>
 <br>
-<br>
 nordix-dynamic-theme.py runs: `gsettings set org.gnome.desktop.interface gtk-theme nordix-dynamic-theme` to set the GTK theme. It runs `hyprctl reload` to reload the Qt theme (Hyprland uses hyprqt6engine). Your hyprqt6engine.conf needs to point the color scheme to `~/.cache/wal/nordix-dynamic.colors` for the Qt theme to work.
 
 nordix-wallpaper-loop.sh uses waypaper's own config to trigger a reload of Nordix Dynamic Theme. It is simple — nordix-wallpaper-loop.sh is like a timer where you tell it how many seconds you want between wallpaper changes. When the timer has run the specific seconds you have given it, it will run the command: `waypaper --random`. This takes a random picture from `~/Pictures/wallpapers`.
