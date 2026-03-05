@@ -21,16 +21,19 @@ System settings GUI is available for all the settings you see in Hyprland's wiki
 
 ## **My Vison and Goal**
 
-#### **My Entusiast View on NordixYggdrasil**
+### **My Entusiast View on NordixYggdrasil**
 
-Nordix is ​​many things
+**Nordix is ​​many things**
 - It is rebellious, it is the battleship from the north.
 - Show the world what linux can actually do, a warrior to spread justice and freedom
 - It is a steatmenet 
 
+- _But...._
+
 ### **The purpose of truth - a desire to find friends**
 
-* **I have a vision of a platform to unite all enthusiasts**
+ **I have a vision of a platform to unite all enthusiasts**
+
 
 
 
