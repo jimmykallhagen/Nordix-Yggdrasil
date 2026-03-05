@@ -20,7 +20,7 @@ You adjust everything from the Nordix System settings GUI
 - Scrolling Layout for tilling windows
 - Monocle Layout for tilling windows
   
-#### Nordix Dynamic Theme for Yggdrasil
+### Nordix Dynamic Theme for Yggdrasil
 **Dynamically adjusts your desktop theme by taking the colors from your wallpaper**
 
 - GTK-3
