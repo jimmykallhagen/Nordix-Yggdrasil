@@ -36,7 +36,7 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 
 ## **How It Works**
 
-#### **Nordix Dynamic Theme uses **pywal** to extract colors from your current wallpaper and applies them across the entire desktop:**
+### **Nordix Dynamic Theme uses **pywal** to extract colors from your current wallpaper and applies them across the entire desktop:**
 
 - **GTK-3** — based on adw-gtk3-dark with pywal color variables, includes improved Thunar support with rounded rubberband selection
 - **GTK-4** — custom `libadwaita-tweaks.css` for native libadwaita apps
@@ -51,7 +51,7 @@ Every time the wallpaper changes, waypaper reloads `~/.config/waypaper/config.in
 
 ---
 
-## Wallpaper Management
+## **Wallpaper Management**
 
 - Uses **swww** as wallpaper daemon — supports animated GIFs and static wallpapers
 - Uses **waypaper** for wallpaper management and selection
@@ -61,9 +61,9 @@ Every time the wallpaper changes, waypaper reloads `~/.config/waypaper/config.in
 
 ---
 
-## Templates
+## **Templates**
 
-The pywal templates for Nordix Dynamic Theme need to be placed in `~/.config/wal/templates/`:
+### **The pywal templates for Nordix Dynamic Theme need to be placed in `~/.config/wal/templates/`:**
 
 - `gtk.css` — GTK-3 theme template
 - `libadwaita-tweaks.css` — GTK-4/libadwaita template
