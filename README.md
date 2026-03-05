@@ -73,14 +73,5 @@ If you are one of those who think you need to change this, then you don't need a
 
 
 
-
-
-
-
-Building the platform where I hope many other project enthusiasts will want to use Nordix Yggdrasil as "home" for their own projects 
-I have a lot left to publish. so more exists. 
-iso exists but I have a lot to rebuild on it
-
-
 TheEnchantedPotao@proton.me
 
