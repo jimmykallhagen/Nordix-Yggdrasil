@@ -1,4 +1,4 @@
-# Nordix Dynamic Theme for Yggdrasil desktop envirorment
+
 
 Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a matching color scheme for GTK-3, GTK-4, Qt, and Firefox from your wallpaper.  (nordix-dynamic-theme.py)
 
