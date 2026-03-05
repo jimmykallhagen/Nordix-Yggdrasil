@@ -34,9 +34,9 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 
 ---
 
-## How It Works
+## **How It Works**
 
-**Nordix Dynamic Theme uses **pywal** to extract colors from your current wallpaper and applies them across the entire desktop:**
+#### **Nordix Dynamic Theme uses **pywal** to extract colors from your current wallpaper and applies them across the entire desktop:**
 
 - **GTK-3** — based on adw-gtk3-dark with pywal color variables, includes improved Thunar support with rounded rubberband selection
 - **GTK-4** — custom `libadwaita-tweaks.css` for native libadwaita apps
