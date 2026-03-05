@@ -47,6 +47,8 @@ nordix-wallpaper-loop.sh uses waypaper's own config to trigger a reload of Nordi
 
 Every time the wallpaper changes, waypaper reloads `~/.config/waypaper/config.ini`. The waypaper config has the option `post_command`, and that is the key to triggering nordix-dynamic-theme.py. So every time the wallpaper changes, the post command runs: `post_command = /usr/bin/nordix-dynamic-theme.py` — and your desktop changes theme on GTK-3, GTK-4, Qt, Firefox and any terminals that are already open.
 
+---
+
 ## Wallpaper Management
 
 - Uses **swww** as wallpaper daemon — supports animated GIFs and static wallpapers
