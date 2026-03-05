@@ -57,6 +57,8 @@ Every time the wallpaper changes, waypaper reloads `~/.config/waypaper/config.in
 - Uses **swengine** to browse and download wallpapers and GIFs
 - Waypaper's config triggers Nordix Dynamic Theme on wallpaper change
 
+---
+
 ## Templates
 
 The pywal templates for Nordix Dynamic Theme need to be placed in `~/.config/wal/templates/`:
@@ -66,6 +68,8 @@ The pywal templates for Nordix Dynamic Theme need to be placed in `~/.config/wal
 - `nordix-dynamic.colors` — Qt/KDE color scheme template
 
 When `nordix-dynamic-theme.py` runs pywal, these templates are used to generate theme files in `~/.cache/wal/`. The script then creates symlinks to the correct locations so all toolkits pick up the same theme.
+
+---
 
 ## Usage
 
