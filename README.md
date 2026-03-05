@@ -82,11 +82,5 @@ I have a lot left to publish. so more exists.
 iso exists but I have a lot to rebuild on it
 
 
-
 TheEnchantedPotao@proton.me
-#**Nordix - Yggdrasil**
-![Nordix Logo](icons/hicolor/128x128/apps/nordix.png) 
-TheEnchantedPotao@proton.me
-![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo")
 
-![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo")
