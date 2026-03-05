@@ -11,7 +11,7 @@
 
 **Based on the Wayland compositor Hyprland**
 
-Gives almost endless opportunities
+Gives almost endless opportunities.
 You adjust everything from the Nordix System settings GUI
 
 - Traditional desktop layout for floating windows
