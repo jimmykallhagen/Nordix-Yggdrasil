@@ -1,3 +1,8 @@
+ <h1 align="center">Nordix Status Bar Yggdrasil</h1>
+<p align="center">
+  <img src="../../icons/hicolor/128x128/apps/nordix.png" alt="Nordix Logo" width="128"/>
+</p
+
 # **Nordix theme for Yggdrasil status bar ashell**
 
 - Complete config file with instructions and a list of selected colors that the user can easy try out
