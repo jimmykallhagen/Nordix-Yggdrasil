@@ -29,35 +29,14 @@ You adjust everything from the Nordix System settings GUI
 - Firfox
 - Terminal
 
+---
+
 ## Yggdrasil's Keybinds
-well-developed system to make keybinds as efficient as possible. <br>
-The basic idea is that you should never have to let go of the mouse or move your left hand
-however, there are some exceptions
+- well-developed system to make keybinds as efficient as possible.
+- The basic idea is that you should never have to let go of the mouse <br>
+or move your left hand
+- however, there are some exceptions
 
-
-
-
-
-
-
-
-
-
-- Extremely optimized arch system 
-- Unique ZFS system
-- Preoptimeezed
-- it takes the harcore enterprise system and places them in a user-friendly environment
-- Gaming, Media, Home-labs, World Cup, productivity, retro gaming, shaders, development. every
----
-
-Technologically advanced system and DE.
-It is built to encourage and inspire others to participate in the Nordix project. 
-The system is a purely enthusiastic system, but everything is built so that even someone new to arch linux 
-or linux can use it, it is built so that every one thats has Computer as hobby can use it.
-
-- Build by entusist for entusiast, but at the same time invete new entusaiasdst
-
----
 
 ### **Nordix Yggdrasil - The Final Desktop Envirorment** 
 
