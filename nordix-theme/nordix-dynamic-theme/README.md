@@ -238,6 +238,6 @@ post_command = /path/to/nordix-dynamic-theme.py
   - Nordix modifications:
     * Dynamic color scheme for pywal integration
     * Added support for Thunar theming
-  - [Original project] (https://github.com/lassekongo83/adw-gtk3)
+    * [Original project](https://github.com/lassekongo83/adw-gtk3)
 
 
