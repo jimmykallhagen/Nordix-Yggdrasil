@@ -134,7 +134,7 @@ This info is taken from: https://github.com/Frewacom/pywalfox
 - [ ] Discord theme integration
 - [ ] Steam theme integration
 - [ ] Wezterm theme integration
-- [ ] WT needs some work
+- [ ] Qt needs some work
 - [ ] Some libadwaita programs are not good, like Lact
 - [ ] Finish the Qt theme
 - [ ] Create templates for gwenview
