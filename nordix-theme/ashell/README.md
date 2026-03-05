@@ -8,7 +8,9 @@
 - Nordix desktop environment Yggdrasil is built upon the hard work of several outstanding open-source projects.  
 - All credit for the foundational work belongs to the original developers. Here are the projects that make this possible:
 
-**[Ashell](https://github.com/MalpenZibo/ashell)** - Wayland status bar for Hyprland and Niri, a project run by Simone Camito "MalpenZibo" and a number of Contributors
+### The projects that make this possible:
+
+- **[Ashell](https://github.com/MalpenZibo/ashell)** - Wayland status bar for Hyprland and Niri, a project run by Simone Camito "MalpenZibo" and a number of Contributors
 - 
 
 ---
