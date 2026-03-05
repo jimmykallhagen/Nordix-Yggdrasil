@@ -30,7 +30,7 @@ You adjust everything from the Nordix System settings GUI
 - Terminal
 
 ### Yggdrasil's Keybinds
-well-developed system to make keybinds as efficient as possible. <br>tag
+well-developed system to make keybinds as efficient as possible. <br>
 The basic idea is that you should never have to let go of the mouse or move your left hand
 however, there are some exceptions
 
