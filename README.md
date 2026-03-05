@@ -43,17 +43,6 @@ or move your left hand
 
 ---
 
-## **Yggdrasil** *-* The Final Desktop Envirorment
-
-#### **Never again a dotfile**
-
-The entire Hyprland wiki is built into Yggdrasil's system settings, with a few exceptions.
-Yggdrasil is not Hyprland, but a desktop environment I built myself based on Hyprland's compositor.
-
-If you are one of those who think you need to change this, then you don't need a graphical interface either.
-
----
-
 ## **GUI - For All System Settings**
 - Nordix System-settings
 - Nordix Default-apps
