@@ -3,7 +3,7 @@
   <img src="icons/hicolor/128x128/apps/nordix.png" alt="Nordix Logo" width="128"/>
 </p>
 
-
+**----**
 ## `¤` **Yggdrasil**
 
 - Yggdrasil is truly something unique, I can proudly say that it is Nordix's flagship
