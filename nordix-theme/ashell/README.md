@@ -16,7 +16,8 @@
 
 ## How It Works
 - Place the config file in ~/.config/ashell/config.toml
-- To configure, follow the instructions in the config 
+- To configure, follow the instructions in the config
+- If you use Yggdrasil the place an name is different: ~/.config/nordix/desktop/config/nordix-ashell-theme.toml
 
 ---
 
