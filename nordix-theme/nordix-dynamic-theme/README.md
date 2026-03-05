@@ -84,11 +84,15 @@ When `nordix-dynamic-theme.py` runs pywal, these templates are used to generate 
 | `-c`, `--contrast` | Adjust color contrast                                          |
 | `-w`, `--wait`     | Delay before applying                                          |
 
+---
+
 ## Usage nordix-wallpaper-loop.sh
 
 - Usage: nordix-wallpaper-loop.sh [TIME]
 - Automatically change wallpaper at a set interval using waypaper.
 - TIME — Seconds between wallpaper changes (default: 180)
+
+---
 
 ## Pywalfox Theme Modes
 
@@ -98,21 +102,25 @@ This info is taken from: https://github.com/Frewacom/pywalfox
 
 > There are three different theme modes: "Dark" (🌙), "Light" (☀) and "Auto" (👁)️. Selecting "Auto" will automatically switch between the other two modes based on a time interval found in the "General" section of the add-on settings GUI.
 
+---
+
 ## Examples
 
 - nordix-wallpaper-loop.sh 60 — Change every 60 seconds
 - nordix-wallpaper-loop.sh 300 — Change every 5 minutes
 - nordix-wallpaper-loop.sh — Change every 3 minutes (default)
 
+---
+
 ## Install
-
-- sudo chmod +x /usr/lib/python3.14/site-packages/pywalfox/bin/main.sh
-- pywalfox install
-- sudo cp ./nordix-dynamic-theme.py /usr/bin
-- sudo chmod +x /usr/bin/nordix-dynamic-theme.py
-- sudo cp ./nordix-wallpaper-loop.sh /usr/bin
-- sudo chmod +x /usr/bin/nordix-wallpaper-loop.sh
-
+```
+udo chmod +x /usr/lib/python3.14/site-packages/pywalfox/bin/main.sh
+pywalfox install
+sudo cp ./nordix-dynamic-theme.py /usr/bin
+sudo chmod +x /usr/bin/nordix-dynamic-theme.py
+sudo cp ./nordix-wallpaper-loop.sh /usr/bin
+sudo chmod +x /usr/bin/nordix-wallpaper-loop.sh
+```
 ## Waypaper Config
 
 - Waypaper needs to have this in ~/.config/waypaper/config.ini
