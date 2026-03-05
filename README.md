@@ -7,7 +7,7 @@
 
 # ❄️ **Yggdrasil**
 
-### **Yggdrasil is truly something unique, I can proudly say that it is Nordix's flagship**
+## **Yggdrasil is truly something unique, I can proudly say that it is Nordix's flagship**
 
 **Based on the Wayland compositor Hyprland**
 
@@ -20,7 +20,7 @@ You adjust everything from the Nordix System settings GUI
 - Scrolling Layout for tilling windows
 - Monocle Layout for tilling windows
   
-### Nordix Dynamic Theme for Yggdrasil
+## Nordix Dynamic Theme for Yggdrasil
 **Dynamically adjusts your desktop theme by taking the colors from your wallpaper**
 
 - GTK-3
@@ -29,7 +29,7 @@ You adjust everything from the Nordix System settings GUI
 - Firfox
 - Terminal
 
-### Yggdrasil's Keybinds
+## Yggdrasil's Keybinds
 well-developed system to make keybinds as efficient as possible. <br>
 The basic idea is that you should never have to let go of the mouse or move your left hand
 however, there are some exceptions
