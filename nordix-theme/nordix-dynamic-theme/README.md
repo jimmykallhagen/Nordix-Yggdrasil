@@ -24,7 +24,7 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 
 > "**_Even though the project is free of charge,_**  
 > **_we are all responsible for paying by showing respect._**"  
-> *Jimmy Källhagen – Nordix*
+>                              *Jimmy Källhagen – Nordix*
 
 ---
 
