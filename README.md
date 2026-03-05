@@ -71,6 +71,15 @@ If you are one of those who think you need to change this, then you don't need a
 
 ---
 
+## Licens
+### **Nordix Yggdrasil**
+  * SPDX-License-Identifier: GPL-3.0-or-later
+  * Copyright (c) 2025 Nordix
+  * This is a part of Nordix - Yggdrasil desktop envirorment
+
+
+---
+
 
 
 TheEnchantedPotao@proton.me
