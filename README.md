@@ -2,10 +2,9 @@
 <h1 align="center">Nordix Yggdrasil</h1>
 
 <p align="center">
-Ett helt custom Linux-system med egenbyggd desktop-miljö, scripts och shader-system.
+![Nordix Logo](icons/hicolor/128x128/apps/nordix.png) 
 </p>
 
-![Nordix Logo](icons/hicolor/128x128/apps/nordix.png) 
 TheEnchantedPotao@proton.me
 ![Nordix Logo](icons/hicolor/128x128/apps/nordix.png "Nordix Logo")
 Yggdrasil is a full-fledged desktop environment for Nordix, it is an enthusiast system that provides everything lux has to offer. Yggdrasil is a very technologically advanced DE, it is built to encourage and inspire others to participate in the Nordix project. the system is a purely enthusiastic system, but everything is built so that even someone new to arch linux or linux can use it, it is built so that if you are interested, you can use Nordix yggdrasil without starting by googling. 
