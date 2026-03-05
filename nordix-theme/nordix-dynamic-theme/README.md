@@ -20,8 +20,10 @@ Dynamic wallpaper-based theming for Nordix Desktop — automatically generates a
 - **[waypaper](https://github.com/anufrievroman/waypaper)** – GUI wallpaper setter for Wayland and Xorg, by Roman "anufrievroman" and contributors.
 - **[adw-gtk3](https://github.com/lassekongo83/adw-gtk3)** – Unofficial GTK3 port of libadwaita, by Mattias "lassekongo83". The base of Nordix Dynamic GTK Theme.
 
-> "**Even though the project is free of charge,  
-> we are all responsible for paying by showing respect.**"  
+---
+
+> "**_Even though the project is free of charge,_**  
+> **_we are all responsible for paying by showing respect._**"  
 > *Jimmy Källhagen – Nordix*
 
 ---
