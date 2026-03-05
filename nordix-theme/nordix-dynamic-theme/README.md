@@ -114,11 +114,21 @@ This info is taken from: https://github.com/Frewacom/pywalfox
 
 ## Install
 ```
-udo chmod +x /usr/lib/python3.14/site-packages/pywalfox/bin/main.sh
+sudo chmod +x /usr/lib/python3.14/site-packages/pywalfox/bin/main.sh
+```
+```
 pywalfox install
+```
+```
 sudo cp ./nordix-dynamic-theme.py /usr/bin
+```
+```
 sudo chmod +x /usr/bin/nordix-dynamic-theme.py
+```
+```
 sudo cp ./nordix-wallpaper-loop.sh /usr/bin
+```
+```
 sudo chmod +x /usr/bin/nordix-wallpaper-loop.sh
 ```
 ## Waypaper Config
