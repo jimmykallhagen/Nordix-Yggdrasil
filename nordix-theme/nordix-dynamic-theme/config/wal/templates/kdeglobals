@@ -1,0 +1,197 @@
+##===================================================================##
+ # SPDX-License-Identifier: GPL-3.0-or-later                         #
+ # Copyright (c) 2025 Jimmy Källhagen                                #
+ # Part of Yggdrasil - Nordix desktop environment                    #
+ # Nordix and Yggdrasil are registered trademarks of Jimmy Källhagen # 
+##===================================================================##
+
+# ==========================================================================
+# Nordix Dynamic Theme — kdeglobals (pywal template)
+# ==========================================================================
+# Place in: ~/.config/wal/templates/kdeglobals
+# Output:   ~/.cache/wal/kdeglobals
+#
+# This template is for Qt apps that read ~/.config/kdeglobals instead of
+# the .colors file. It uses the same color mapping as nordix-dynamic.colors
+# and the GTK3/GTK4 templates:
+#
+#   color1  = accent / destructive / red
+#   color2  = success / green
+#   color3  = warning / yellow
+#   color4  = link / blue
+#   color5  = visited / purple
+#   color8  = muted / inactive
+#   color9  = bright red (intense variant of color1)
+#
+# nordix-dynamic-theme.py symlinks ~/.cache/wal/kdeglobals
+# to ~/.config/kdeglobals so all Qt apps pick up pywal colors.
+# ==========================================================================
+
+[ColorEffects:Disabled]
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color={color8.rgb}
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate={color4.rgb}
+BackgroundNormal={color0.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Complementary]
+BackgroundAlternate={color4.rgb}
+BackgroundNormal={background.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Header]
+BackgroundAlternate={background.rgb}
+BackgroundNormal={color0.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Header][Inactive]
+BackgroundAlternate={color0.rgb}
+BackgroundNormal={background.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Selection]
+BackgroundAlternate={color4.rgb}
+BackgroundNormal={color1.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={foreground.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color3.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Tooltip]
+BackgroundAlternate={background.rgb}
+BackgroundNormal={color0.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:View]
+BackgroundAlternate={color0.rgb}
+BackgroundNormal={background.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[Colors:Window]
+BackgroundAlternate={color0.rgb}
+BackgroundNormal={background.rgb}
+DecorationFocus={color1.rgb}
+DecorationHover={color1.rgb}
+ForegroundActive={color1.rgb}
+ForegroundInactive={color8.rgb}
+ForegroundLink={color4.rgb}
+ForegroundNegative={color9.rgb}
+ForegroundNeutral={color3.rgb}
+ForegroundNormal={foreground.rgb}
+ForegroundPositive={color2.rgb}
+ForegroundVisited={color5.rgb}
+
+[General]
+ColorScheme=NordixDynamic
+Name=Nordix Dynamic
+shadeSortColumn=true
+
+[Icons]
+Theme=breeze-dark
+
+[KDE]
+contrast=4
+widgetStyle=Breeze
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=173
+View Style=DetailTree
+
+[WM]
+activeBackground={color0.rgb}
+activeBlend={foreground.rgb}
+activeForeground={foreground.rgb}
+inactiveBackground={background.rgb}
+inactiveBlend={color8.rgb}
+inactiveForeground={color8.rgb}
