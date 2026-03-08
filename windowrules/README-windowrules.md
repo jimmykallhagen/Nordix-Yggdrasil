@@ -7,12 +7,12 @@ Window rules configuration for the Yggdrasil desktop environment.
 Yggdrasil uses a two-tier window rules system that allows users to customize behavior while preserving system defaults.
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Hyprland Configuration                       │
-├─────────────────────────────────────────────────────────────────┤
+┌─────────────────────────────────────────────────────────────────────┐
+│                       Yggdrasil Configuration                       │
+├─────────────────────────────────────────────────────────────────────┤
 │  source = /usr/lib/nordix/yggdrasil/config/system-windowrules.conf  │  ← System defaults (read first)
 │  source = ~/.config/nordix/user/windowrules/user-windowrules.conf   │  ← User overrides (read last)
-└─────────────────────────────────────────────────────────────────┘
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 **Last rule wins** - User rules override system defaults automatically.
@@ -70,9 +70,6 @@ The config uses distinct visual markers for easy navigation in terminal editors:
 
 #::: Opacity ::: Firefox ::::#                    ← Opacity rules (easy to find/modify)
 
-#********************************************#
-#***        Special Workspaces            ***#    ← Special workspace section
-#********************************************#
 ```
 
 ### Opacity Sections
@@ -110,6 +107,153 @@ bind = $mainMod, G, togglespecialworkspace, Game
 - **Recording**: OBS Studio, GPU Screen Recorder
 - **Virtual Machines**: virt-manager, Waydroid
 - **Desktop**: COSMIC apps, xdg-desktop-portal
+
+
+**Web Browser**
+ * Firefox
+ * Brave
+ * Chromium
+ * LibreWolf
+
+**Image Viewers/Editor**
+ - Gwenview
+
+**GNU image manipulation program**
+ - GIMP
+    * Welcome to GIMP
+    * Change Foreground Color
+
+**File Managers**
+ - Thunar
+    * Rename Dialog
+    * Properties Dialog
+    * New Empty File
+    * File Operation Progress
+    * Confirm Replace
+    * Open Shell Script
+    * Create New Folder
+    * Properties
+ - Ark (Archive)
+    *  Compress to Archive
+
+**Dialog Systems**
+ - Zenity
+ - xdg-desktop-portal
+     * xdg-desktop-portal-gtk
+     * Save File
+     * Open File
+     * Add New Virtual Hardware
+
+**Desktop Apps**
+ - Upscayl (Select Image)
+ - Smile (Emoji Picker)
+ - Gucharmap (Character Map)
+ - Crow Translate
+ - Calculator (qalculate-gtk, GNOME Calculator)
+ - Bluetooth (blueberry, blueman-manager)
+ - Audio Controls (pavucontrol)
+ - Network (nm-applet, nm-connection-editor)
+ - Timeshift
+ - GNOME System Monitor
+ - File-Roller
+
+**Terminals**
+ - Wezterm
+ - Ghostty
+ - Cool Retro Term
+
+**Visual Editors**
+ - Sublime Text
+ - Lapce
+ - Zed
+
+**Authentication**
+ - Polkit
+    * GCR-Prompter
+    * Unlock Keyring
+
+**Virtualization**
+ - virt-manager
+
+**Android**
+ - Waydroid
+    * Aurora Store
+    * Package Installer
+    * Android Vending
+
+**COSMIC Apps**
+ - com.system76.*
+
+**Aplication Lancher**
+ - cosmic-app-library
+
+**Wallpaper-Store**
+ - Swengine
+
+**Local AI**
+ - Jan AI
+ - LM Studio
+ - ClaraVerse
+
+**Media**
+ - Picture-in-Picture
+ - mpv
+ - imv
+ - danmufloat
+ - termfloat
+ - nemo
+ - ncmpcpp
+ - Spotify
+
+**Recording**
+ - GPU Screen Recorder
+ - OBS Studio
+
+**Communication**
+ - Discord
+ - Armcord
+ - Webcord
+
+**Gaming**
+ - Lutris
+ - Global Game (match:content 3)
+ - Steam
+    * Self Updater
+    * Steam Games (steam_app_*)
+    * Steam Client
+
+**Wine/Proton**
+  - Wine (.exe)
+  - Wine Config (winecfg.exe)
+  - Wine Control Panel (control.exe)
+  - Setup Files
+
+**Download Manager**
+  - Free Download Manager (fdm)
+
+**Emulators**
+  - Yuzu
+
+**Global Rules**
+  - Fullscreen
+  - Modal Dialogs
+
+**Special Workspaces**
+  - Nordix (Sublime, Lapce, Zed, Crow Translate)
+  - Game (steam_app_*, match:content 3)
+  - System Settings (Nordix Settings)
+
+**Additional Rules**
+  - Flameshot
+  - Pinentry (GPG Password)
+
+**Layer Rules**
+   - Cosmic App Library
+   - Ashell
+   - Mpvpaper (Wallpaper)
+   - Notifications
+   - Screenshot Selection
+
 
 ## Quick Start
 
