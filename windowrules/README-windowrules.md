@@ -59,18 +59,6 @@ Both config files include complete Hyprland window rules documentation:
 
 No need to leave your editor to check the wiki.
 
-### Visual Navigation
-
-The config uses distinct visual markers for easy navigation in terminal editors:
-
-```
-#============================================#
-#==#              Application             #==#    ← Standard app section
-#============================================#
-
-#::: Opacity ::: Firefox ::::#                    ← Opacity rules (easy to find/modify)
-
-```
 
 ### Opacity Sections
 
@@ -95,19 +83,6 @@ bind = $mainMod, G, togglespecialworkspace, Game
 ```
 
 ## System Rules Include
-
-- **Browsers**: Firefox, Brave, Chromium, LibreWolf
-- **File Managers**: Thunar (with dialog handling)
-- **Terminals**: Ghostty, Wezterm, Cool Retro Term
-- **Editors**: Sublime, Lapce, Zed
-- **Media**: mpv, imv, Spotify
-- **Gaming**: Steam, Lutris, Wine/Proton, Emulators
-- **Utilities**: Calculator, Bluetooth, Network, Polkit
-- **AI Tools**: Jan AI, LM Studio, ClaraVerse
-- **Recording**: OBS Studio, GPU Screen Recorder
-- **Virtual Machines**: virt-manager, Waydroid
-- **Desktop**: COSMIC apps, xdg-desktop-portal
-
 
 **Web Browser**
  * Firefox
