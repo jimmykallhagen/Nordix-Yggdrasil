@@ -5,19 +5,6 @@
  # Part of Yggdrasil - Nordix desktop environment                    #
  # Nordix and Yggdrasil are registered trademarks of Jimmy Källhagen # 
 ##===================================================================##
-
-TIME_SEC="@"
-
-while true; do
-    waypaper --random
-    sleep "@"
-done
-
-Working
-
-bash
-#!/bin/bash
-# Part of Nordix Desktop
 # Randomly cycles wallpapers using waypaper at a set interval.
 
 show_help() {
